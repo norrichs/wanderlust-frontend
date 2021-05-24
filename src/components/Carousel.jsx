@@ -1,11 +1,13 @@
-import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import React from 'react'
 
 const Carousel = (props) => {
-
+	console.log('Carousel child props',props.children)
 
 	return (
-		<div>hello world Carousel</div>
+		<section className="carousel-container">
+			<div className="section-title">Popular Trips</div>
+			<div className="carousel">{props.children}</div>
+		</section>
 	)
 }
 export default Carousel
