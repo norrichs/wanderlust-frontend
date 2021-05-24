@@ -10,7 +10,8 @@ import Trip from "./pages/Trip";
 function App() {
 	return (
 		<div className="App">
-			<h1>hello world App</h1>
+			
+			{/* <h1>hello world App</h1> */}
 			<Switch>
 				<Route exact path="/">
 					<Home />
