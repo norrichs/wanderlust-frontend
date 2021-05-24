@@ -10,14 +10,15 @@ const AgencyCard = (props) => {
 		<div className="agency-card">
 			<div>
 				<img src={props.agency.logoUrl} />
-				<span>{props.agency.name}</span>
+				<Link to={`/agencies/${props.agency._id}`}>
+					<span>{props.agency.name}</span>
+				</Link>
 			</div>
-			<Link>
-				<div>
-					<span>{props.agency.starRating}</span>
-					<span>{props.agency.reviews.length}</span>
-				</div>
-			</Link>
+
+			<div>
+				<span>{props.agency.starRating}</span>
+				<span>{props.agency.reviews.length}</span>
+			</div>
 		</div>
 	);
 };
