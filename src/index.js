@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router} from 'react-router-dom'
 import './index.css';
 import App from './App';
+import Header from "../src/components/Header"
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <Router>
     <React.StrictMode>
       <App />
+      <Header />
     </React.StrictMode>
   </Router>,
   document.getElementById('root')
