@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import styled from "styled-components"
-import {menuData} from "../../data/menuData"
+import {menuData} from "../data/MenuData"
 
 export default function Header (){
 	return (
