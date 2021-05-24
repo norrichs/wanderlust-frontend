@@ -1,72 +1,71 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import styled from "styled-components"
+import {menuData} from "../../data/menuData"
 
-function Header(){
+export default function Header (){
 	return (
+		
 		<Wrapper>
-			<ContentWrapper>
-			<><img src="https://bn1304files.storage.live.com/y4m6eoCLVgWYHTvzFVWC_M6p1rYMiBuYNhbcKXEAn5hSEyvj153cCQHPClUVHmqi-mNU1SwcLN9GmaHZRcaYsTFMXNFMB18D0dxgxH1t88tO7Iqs-K_qH-kdIr09J_pjSHIm4-oQ028J1Q362Cf0fMpV3lgEPCiQOp6BKViirYTf9yxLKKDRGiGe1544sd4tGc2?width=500&height=500&cropmode=none" width="500" height="500" /></>
-			<br />
-				<TextWrapper>
-					<Title>
-						<h1>Nav</h1>
-						<br />
-						<h1>Home</h1>
-					</Title>
-					<Description>
-						<p>This is my header.</p>
-					</Description>
-				</TextWrapper>
-			</ContentWrapper>
+
+			
+				<img src="https://bn1304files.storage.live.com/y4mpKzW6-2QNM2uI6ld0jlkdSsFgdtuiJZt9VayonGVsHIfgjQdE16f9-unyuwJ5nDVX5b1lqEI7X8zkdSoBDNcOCl8XolsCzKaHXGp1YLBqdTDlkaY5M7CX4pVbGuVUUSQiX8gcv6PBi3_hEMqw1tSYuELEAIour4eVbCYmG_wJMjziw9UF0gm4bzg88TOJnfU?width=250&height=250&cropmode=none" />
+		
+
+			<MenuWrapper>
+			{menuData.map((item , index)=> (
+				<Link to={item.link} key={index}>
+				{item.title}
+				</Link>
+			))} 
+			</MenuWrapper>
+			
+					
 		</Wrapper>
 		
 	)
 }
 
-export default Header
 
-// const menuData = ["Home", "Agency Profile", "Booking", "Customer Profile", "Popular Trips", " Trip"]
 
-// function Header () {
-// 	return (
-// 		<>
-// 		{menuData.map(item => (
-// 			<p>{item}</p>
-// 		))}
-// 		</>
-// 	)
-// }
 
 const Wrapper = styled.div`
-	background: linear-gradient(108deg, #FFBD08 0%, #FF5a5a 70%);
-`
-const ContentWrapper = styled.div `
-	max-width: 1234px;
-	margin: 0 auto;
-	padding: 100px 30px;
-
-`
-const TextWrapper = styled.div`
-	max-width: 360px;
-	display: grid;
-	gap: 30px;
-`
-const Title = styled.h1`
-	font-weight: bold;
-	font-size: 60px;
-	color: black;
-`
-const Description = styled.p`
-
+	background: linear-gradient(108deg, #FFBD08 25%, #FF5a5a 70%);
+	position: absolute;
+	top: 60px;
+	display: flex;
+	grid-template-columns: 44px auto;
+	width: 100%;
+	justify-content: space-around;
+	padding: 0 30px;
+	align-items: center;
 `
 
 
-// const Header = (props) => {
+const MenuWrapper = styled.div`
+	display: flex;
+	grid-template-columns: repeat(6, auto);
+	gap: 50px;
+`
+const MenuItem = styled.div`
+	color: rgba(255, 255, 255, 0.7);
+	display: flex;
+	grid-template-columns: 24px auto;
+	gap: 10px;
+	align-items: center;
+	padding: 10px;
+	border-radius: 10px;
+	transition: 0.5s ease-out;
+
+	:hover {
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1),
+	inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.2)
+	
+
+	}
+
+`
 
 
-// 	return (
-// 		<div>hello world Header</div>
-// 	)
-// }
-// export default Header
+
