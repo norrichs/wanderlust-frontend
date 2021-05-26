@@ -10,7 +10,7 @@ const CustomerProfile = (props) => {
 
 
 	/// Get the trips ///
-	
+	// SHOW with _id
 
 
 
