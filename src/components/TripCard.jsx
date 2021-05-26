@@ -3,17 +3,13 @@ import {Link} from 'react-router-dom'
 import "../dev/dummyStyle.css";
 
 const TripCard = (props) => {
-	console.log("tripCard",props.trip);
 	return (
-		<div className="trip-card">
-			<Link to={`/trips/${props.trip._id}`}>
-				<div>{props.trip.name}</div>
-			</Link>
-			<div>
-				<span>{props.trip.location.name}</span>
-				<span>{`${props.trip.dateStart} - ${props.trip.dateEnd}`}</span>
+		<Link to={`/trips/${props._id}`}>
+			<div className="trip-card">
+				<div>{props.name}</div>
+				<p>{props.desc}</p>
 			</div>
-		</div>
+		</Link>
 	);
 };
 export default TripCard;

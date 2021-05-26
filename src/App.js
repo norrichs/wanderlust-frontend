@@ -13,8 +13,13 @@ function App() {
 	const [activeCustomer, setActiveCustomer] = useState({});
 
 	/// DEV VARIABLES ///
-	const url = "http://localhost:4500";
-	const devUserId = "60ae91414d47758f4f146474"; // set to a value valid for your dev environment
+
+	const url = "https://travel-app-dg.herokuapp.com";
+	const devUserId = "60ae7f5a134d1a3ed0d5a818"; // set to a value valid for your dev environment
+
+// 	const url = "http://localhost:4500";
+// 	const devUserId = "60ae91414d47758f4f146474"; // set to a value valid for your dev environment
+// >>>>>>> 06eae8575e37016cb94b944a79d4ff9e5339e721
 
 	/// OTHER VARIABLES ///
 	// deployed url: "https://www.notion.so/Backend-8da8f6e67fef4c3ab9cd86d1327f903e"
