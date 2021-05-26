@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 import styled from "styled-components"
 import {menuData} from "../data/MenuData"
@@ -31,8 +31,7 @@ export default function Header (){
 
 const Wrapper = styled.div`
 	background: linear-gradient(108deg, #FFBD08 25%, #FF5a5a 70%);
-	position: absolute;
-	top: 60px;
+	
 	display: flex;
 	grid-template-columns: 44px auto;
 	width: 100%;
@@ -61,8 +60,6 @@ const MenuItem = styled.div`
 	background: rgba(255, 255, 255, 0.1);
 	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1),
 	inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.2)
-	
-
 	}
 
 `
