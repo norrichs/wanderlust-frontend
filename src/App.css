@@ -1,9 +1,10 @@
 /* Global variables */
 :root {
 	/* Dimensions */
-	--avatar-diameter: 25vw;
+	--avatar-diameter: 40vw;
   --card-width: 80vw;
   --card-ratio: calc(4 / 3);
+  --social-diameter: 10vw;
 
 
 	/* Colors */
@@ -12,11 +13,59 @@
   --color-blue: #0e9cd3;
   --color-lightblue: #3CB7C2;
 }
+* {
+  box-sizing: border-box;
+  border: 1px solid;
+}
 
 
 
 
 /* Customer Profile page*/
+
+.customer-profile{
+  margin: 0 auto;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  max-width: 800px;
+  
+}
+.customer-profile header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.customer-profile section {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-avi{
+  max-width: 600px;
+  width: var(--avatar-diameter);
+  border-radius: calc(var(--avatar-diameter) / 2);
+}
+
+.user-socials{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.user-social {
+  width: var(--social-diameter);
+  height: var(--social-diameter);
+  border-radius: calc(var(--social-diameter) / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 /* Trip page */

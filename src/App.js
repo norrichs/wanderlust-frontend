@@ -11,6 +11,7 @@ import Trip from "./pages/Trip";
 function App() {
 	/// STATE VARIABLES ///
 	const [activeCustomer, setActiveCustomer] = useState({});
+	const [activeCustomerTrips, setActiveCustomerTrips] = useState([])
 
 	/// DEV VARIABLES ///
 	const url = "http://localhost:4500";
@@ -28,9 +29,38 @@ function App() {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log("got user data:", data.data);
-				setActiveCustomer(data.data);
+				const customer = data.data;
+				console.log('appjs get active customer',customer.booked_trips_ref[0].activities[2])
+				setActiveCustomer({
+					firstName: customer.name.first,
+					lastName: customer.name.last,
+					avatar: customer.avatar,
+					_id: customer._id,
+					booked_trips: [
+						...customer.booked_trips
+					],
+					username: customer.username,
+					password: customer.password
+				});
 			});
 	};
+
+
+	// { 
+	// 	...customer, 
+	// 	name: { 
+	// 		...customer.name 
+	// 	},
+	// 	booked_trips: [
+	// 		...customer.booked_trips
+	// 	],
+	// 	booked_trips_ref:[
+
+
+	// 	]
+
+	// // }
+
 
 	useEffect(() => {
 		getActiveCustomer(devUserId); // TODO change this to get active user ID from login
