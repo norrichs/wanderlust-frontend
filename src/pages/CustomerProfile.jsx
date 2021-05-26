@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
-import dummyDataTrips from "../dev/dummyDataTrips"
+import dummyDataTrips from "../dev/dummyDataTrips";
 const CustomerProfile = (props) => {
+	console.log("user profile props:", props);
+	let user = props.activeCustomer;
+
 	// const [tripList, setTripList] = useState([]);
 
 	// // Three tabs can be displayed: "favorites", "wallet", "about"
@@ -27,6 +30,7 @@ const CustomerProfile = (props) => {
 
 	return (
 		<main>
+			<h1>Welcome, {user.username} </h1>
 			<header></header>
 			<section></section>
 			{/* <section>{tripList.length > 0 ? loadedTrips() : loading()}</section> */}
