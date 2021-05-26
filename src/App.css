@@ -1,8 +1,43 @@
-.App {
-  text-align: center;
+/* Global variables */
+:root {
+	/* Dimensions */
+	--avatar-diameter: 25vw;
+  --card-width: 80vw;
+  --card-ratio: calc(4 / 3);
+
+	/* Colors */
+  --color-yellow: #FFBD08;
+  --color-coral: #FF5A5A;
+  --color-blue: #0e9cd3;
+  --color-lightblue: #3CB7C2;
 }
 
 
 img {
   width: 100px
 }
+
+
+
+/* Customer Profile page*/
+
+
+/* Trip page */
+
+
+/* Popular trips page */
+
+
+/* Home Page */
+
+
+/* Agency Profile Page */
+
+
+/* Booking page */
+
+
+/* Login Page */
+
+
+>>>>>>> 06eae8575e37016cb94b944a79d4ff9e5339e721
