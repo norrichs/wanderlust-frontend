@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 
-const PopulatTrips = (props) => {
+const PopularTrips = (props) => {
 
 
 	return (
 		<div>hello world PopulatTrips</div>
 	)
 }
-export default PopulatTrips
+export default PopularTrips
