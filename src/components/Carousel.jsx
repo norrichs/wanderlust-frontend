@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Carousel = (props) => {
-	console.log('Carousel child props',props.children)
 
 	return (
 		<section className="carousel-container">

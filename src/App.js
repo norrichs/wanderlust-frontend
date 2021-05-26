@@ -13,7 +13,7 @@ function App() {
 	const [activeCustomer, setActiveCustomer] = useState({});
 
 	/// DEV VARIABLES ///
-	const url = "http://localhost:4500";
+	const url = "https://travel-app-dg.herokuapp.com";
 	const devUserId = "60ae7f5a134d1a3ed0d5a818"; // set to a value valid for your dev environment
 
 	/// OTHER VARIABLES ///

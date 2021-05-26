@@ -5,58 +5,75 @@ import TripCard from "../components/TripCard";
 import AgencyCard from "../components/AgencyCard"
 import Carousel from "../components/Carousel";
 
-// TODO remove following 2 imports
-import dummyDataTrips from "../dev/dummyDataTrips";
-import dummyDataAgencies from "../dev/dummyDataAgencies";
 
 const Home = (props) => {
-	// STATE variables
-	const [tripList, setTripList] = useState([]);
-	const [agencyList, setAgencyList] = useState([]);
+	const [trips, setTrips] = useState([])
+	const [agency, setAgency] = useState([])
+	const url = "https://travel-app-dg.herokuapp.com";
 
-	// Data INDEX functions
-	// TODO change to production versions when data sources are online and populated
 	const getTrips = () => {
-		setTripList([...dummyDataTrips]);
-	};
-	const getAgencies = () => {
-		setAgencyList([...dummyDataAgencies]);
-	};
-
-
-	// Initialize Data on load
-	useEffect(() => {
-		getTrips();
-		getAgencies();
-	}, []);
-
-	const loadedTrips = () => {
-		return tripList.map((trip, i) => {
-			console.log("loadedTrips", trip);
-			return <TripCard trip={trip} key={i} />;
-		});
-	};
-	const loadedAgencies = () => {
-		return agencyList.map((agency, i) => {
-			console.log("loadedAgencies", agency);
-			return <AgencyCard agency={agency} key={i} />
+		fetch(url + "/trip")
+		.then((res) => res.json())
+		.then((data) => {
+			setTrips(data.data.map((item, index) => {
+				return (
+					<TripCard
+						name={item.location.name}
+						_id={item._id}
+						desc={item.description}
+					/>
+				)
+			}))
 		})
 	}
+	useEffect(() => {
+		getTrips();
+	}, [])
+
+	const getAgency = () => {
+		fetch(url + "/agency")
+		.then((res) => res.json())
+		.then((data) => {
+			console.log(data.data)
+			setAgency(data.data.map((item, index) => {
+				return (
+					<AgencyCard 
+						name={item.name}
+						_id={item._id}
+						logo={item.logo}
+					/>
+				)
+			}))
+		})
+	}
+	useEffect(() => {
+		getAgency()
+	}, [])
+
+	const loaded = () => {
+		return (
+			<div>
+			<Header />
+			<Carousel id="trip-carousel">
+				{trips}
+			</Carousel>
+			<Carousel id="agency-carousel">
+				{agency}
+			</Carousel>
+			</div>
+		)
+	};
+
 	const loading = () => {
 		return <div>Loading</div>;
 	};
 
 
-	return (
-		<main>
-			<Header />
-			<Carousel id="trip-carousel">
-				{tripList.length > 0 ? loadedTrips() : loading()}
-			</Carousel>
-			<Carousel id="agency-carousel">
-				{tripList.length > 0 ? loadedAgencies() : loading()}
-			</Carousel>
-		</main>
-	);
+	if (trips.length > 0 && agency.length > 0){
+		return loaded()
+	} else {
+		return loading()
+	}
+
 };
 export default Home;
