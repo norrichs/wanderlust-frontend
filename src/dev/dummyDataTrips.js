@@ -1,59 +1,63 @@
 const dummyDataTrips = [
 	{
-		_id: 111,
-		name: "beach",
-		location:"beach place",
-		dateStart: "6/5/2021",
-		dateEnd: "6/15/2021"
+		_id: 2001,
+		name: "Cairns Scuba Trip",
+		photo: "https://prodivecairns.com/images/drone/prodive-drone-nov-2017-003-fullres.43.g.jpg",
+		description: "Go scuba diving on a boat and see some fishes",
+		activities: ["scuba diving", "boating"],
+		location: {
+			name: "Cairns QLD, Australia",
+			type: "Point",
+		},
+		coordinates: [-16.8509347202358, 145.702737607069],
+		agency: {
+			ref: "Agency",
+			type: "1000",
+		},
+		reviews: [
+			{
+				ref: "Review",
+				type: "2000",
+			},
+			{
+				ref: "Review",
+				type: "2001",
+			},
+			{
+				ref: "Review",
+				type: "2002",
+			},
+		],
 	},
 	{
-		_id:112,
-		name: "festival",
-		location: "festival place",
-		dateStart: "7/20/2021",
-		dateEnd: "7/27/2021"
+		id: 2002,
+		name: "Perth Hikes",
+		photo: "https://prodivecairns.com/images/drone/prodive-drone-nov-2017-003-fullres.43.g.jpg",
+		description: "Go hiking in Perth",
+		activities: ["hiking", "sites"],
+		location: {
+			name: "Perth, NSW, Australia",
+			type: "Point",
+		},
+		coordinates: [-16.8509347202358, 145.702737607069],
+		agency: {
+			ref: "Agency",
+			type: "1001",
+		},
+		reviews: [
+			{
+				ref: "Review",
+				type: "2003",
+			},
+			{
+				ref: "Review",
+				type: "2004",
+			},
+			{
+				ref: "Review",
+				type: "2005",
+			},
+		],
 	},
-	{
-		_id: 113,
-		name: "beach 2",
-		location:"beach place 2",
-		dateStart: "6/5/2021",
-		dateEnd: "6/15/2021"
-	},
-	{
-		_id:114,
-		name: "festival  2",
-		location: "festival place 2",
-		dateStart: "7/20/2021",
-		dateEnd: "7/27/2021"
-	},
-	{
-		_id: 115,
-		name: "forest",
-		location:"beach place",
-		dateStart: "6/5/2021",
-		dateEnd: "6/15/2021"
-	},
-	{
-		_id:116,
-		name: "desert",
-		location: "festival place",
-		dateStart: "7/20/2021",
-		dateEnd: "7/27/2021"
-	},
-	{
-		_id: 117,
-		name: "forest 2",
-		location:"beach place 2",
-		dateStart: "6/5/2021",
-		dateEnd: "6/15/2021"
-	},
-	{
-		_id:118,
-		name: "forest  2",
-		location: "festival place 2",
-		dateStart: "7/20/2021",
-		dateEnd: "7/27/2021"
-	}
-]
-export default dummyDataTrips
+];
+export default dummyDataTrips;

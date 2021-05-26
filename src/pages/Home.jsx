@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Header from "../components/Header"
 import TripCard from "../components/TripCard";
 import AgencyCard from "../components/AgencyCard"
 import Carousel from "../components/Carousel";
@@ -44,16 +45,18 @@ const Home = (props) => {
 	const loading = () => {
 		return <div>Loading</div>;
 	};
+
+
 	return (
-		<>
-			<div>hello world Home</div>
+		<main>
+			<Header />
 			<Carousel id="trip-carousel">
 				{tripList.length > 0 ? loadedTrips() : loading()}
 			</Carousel>
 			<Carousel id="agency-carousel">
 				{tripList.length > 0 ? loadedAgencies() : loading()}
 			</Carousel>
-		</>
+		</main>
 	);
 };
 export default Home;

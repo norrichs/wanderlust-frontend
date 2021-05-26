@@ -1,5 +1,6 @@
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom"; 
+import React, {useState} from 'react'
 import AgencyProfile from "./pages/AgencyProfile";
 import Booking from "./pages/Booking";
 import CustomerProfile from "./pages/CustomerProfile";
@@ -8,10 +9,11 @@ import PopularTrips from "./pages/PopularTrips";
 import Trip from "./pages/Trip";
 
 function App() {
+	const [activeCustomer, setActiveCustomer] = useState({})
+
+
 	return (
 		<div className="App">
-	
-			<h1>Wanderlust</h1>
 			<Switch>
 				<Route exact path="/">
 					<Home />
