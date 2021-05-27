@@ -22,6 +22,9 @@ const Trip = (props) => {
 	const loaded = () => {
 		return (
 			<div>
+				<Link to="/">
+					<h1 id="home-link">Back to Home</h1>
+				</Link>
 			<h1>{trip.location.name}</h1>
 			<section id="trip-gallery">
 			<img src={trip.photos[0]} class="trip-pic"/>
