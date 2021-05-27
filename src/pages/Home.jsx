@@ -57,7 +57,7 @@ const Home = ({ handleSelectCustomer ,activeCustomerId}, props) => {
 	const loaded = () => {
 		return (
 			<div>
-				<Header />
+				<Header activeCustomerId={activeCustomerId}/>
 				<Carousel id="trip-carousel">{trips}</Carousel>
 				<Carousel id="agency-carousel">{agency}</Carousel>
 				<button
