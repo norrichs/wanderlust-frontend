@@ -7,6 +7,7 @@ import CustomerProfile from "./pages/CustomerProfile";
 import Home from "./pages/Home";
 import PopularTrips from "./pages/PopularTrips";
 import Trip from "./pages/Trip";
+import Login from "./pages/Login"
 
 function App() {
 	/// STATE VARIABLES ///
@@ -71,6 +72,9 @@ function App() {
 						bookingToAdd={bookingToAdd}
 						activeCustomerId={activeCustomerId}
 					/>
+				</Route>
+				<Route path="/login">
+					<Login/>
 				</Route>
 			</Switch>
 		</div>

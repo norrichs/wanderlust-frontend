@@ -1,14 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const AgencyCard = (props) => {
+const UserTripCard = (props) => {
+	const altImg = "https://source.unsplash.com/QVElk1sgzY4/640x426";
 	return (
-		<Link to={`/agencies/${props._id}`}>
-			<div className="agency-card">
-				<div>{props.name}</div>
-				<img src={props.logo} alt={props.name} />
+		<div className="trip-card">
+			<div className="card-image-wrapper">
+				<Link to={`/trips/${props._id}`}>
+					<img src={props.photo ? props.photo : altImg} />
+				</Link>
+
+				<div onClick={()=>{props.handleAddBooking(props._id)}} className="book-button">B</div>
 			</div>
-		</Link>
+
+			<h2>{props.name}</h2>
+			<div>
+				<span>{props.locationName}</span>
+			</div>
+		</div>
 	);
 };
-export default AgencyCard;
+export default UserTripCard;

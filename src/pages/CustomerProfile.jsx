@@ -43,6 +43,7 @@ const CustomerProfile = (
 				_id={trip._id}
 				name={trip.name}
 				locationName={trip.location.name}
+				photo={trip.photos[0]}
 				handleAddBooking={handleAddBooking}
 			/>
 		);
