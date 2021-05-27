@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import TripCard from "../components/TripCard";
 import AgencyCard from "../components/AgencyCard";
@@ -18,21 +19,20 @@ const Home = (
 			.then((data) => {
 				setTrips(
 					data.data.map((item, index) => {
+						// console.log(item.photos[0])
 						return (
 							<TripCard
 								key={index}
 								name={item.location.name}
 								_id={item._id}
 								desc={item.description}
+								photo={item.photos[0]}
 							/>
 						);
 					})
 				);
 			});
 	};
-	useEffect(() => {
-		getTrips();
-	}, []);
 
 	const getAgency = () => {
 		fetch(url + "/agency")
@@ -41,6 +41,7 @@ const Home = (
 				console.log(data.data);
 				setAgency(
 					data.data.map((item, index) => {
+						console.log(item.logo);
 						return (
 							<AgencyCard
 								key={index}
@@ -55,6 +56,7 @@ const Home = (
 	};
 	useEffect(() => {
 		getAgency();
+		getTrips();
 	}, []);
 
 	const loaded = () => {
@@ -65,16 +67,16 @@ const Home = (
 					activeCustomerId={activeCustomerId}
 				/>
 				<section className="home-content">
+					<div className="heading">
+						<h2>Popular Trips</h2>
+						<span className="light-link">
+							<Link to="/trips">See all</Link>
+						</span>
+					</div>
 					<Carousel id="trip-carousel">{trips}</Carousel>
+					<h2>Travel Agencies</h2>
 					<Carousel id="agency-carousel">{agency}</Carousel>
 				</section>
-				<button
-					onClick={() => {
-						handleSelectCustomer(activeCustomerId);
-					}}
-				>
-					Test Login
-				</button>
 			</main>
 		);
 	};
