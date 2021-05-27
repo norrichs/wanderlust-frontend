@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-const UserTripCard = (props) => {
+const TripCard = (props) => {
 	const altImg = "https://source.unsplash.com/QVElk1sgzY4/640x426";
 	return (
 		<div className="trip-card">
@@ -29,4 +29,4 @@ const UserTripCard = (props) => {
 		</div>
 	);
 };
-export default UserTripCard;
+export default TripCard;
