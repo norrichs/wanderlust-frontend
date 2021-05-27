@@ -7,12 +7,13 @@ import CustomerProfile from "./pages/CustomerProfile";
 import Home from "./pages/Home";
 import PopularTrips from "./pages/PopularTrips";
 import Trip from "./pages/Trip";
-import Login from "./pages/Login"
+import Login from "./pages/Login";
 
 function App() {
 	/// STATE VARIABLES ///
 	const [activeCustomerId, setActiveCustomerId] = useState(null);
 	const [bookingToAdd, setBookingToAdd] = useState(null);
+
 	let history = useHistory();
 	/// DEV VARIABLES ///
 
@@ -37,6 +38,7 @@ function App() {
 	};
 
 	/// OTHER FUNCTIONS ///
+
 
 	useEffect(() => {
 		setActiveCustomerId(devUserId); // TODO change this to get active user ID from login
@@ -74,7 +76,7 @@ function App() {
 					/>
 				</Route>
 				<Route path="/login">
-					<Login/>
+					<Login />
 				</Route>
 			</Switch>
 		</div>
@@ -83,25 +85,8 @@ function App() {
 
 export default App;
 
-
 // class App extends Component {
 // 	state = {
 // 		sideDrawerOpen: false
 // 	};
-// 	drawerToggleClickHandler = () => {
-// 		this.setState((prevState) => {
-// 			return {sideDrawerOpen: !prevState.sideDrawerOpen};
-// 		} );
-// 	};
-// backdropClickHandler = () => {
-// 	this.setState({sideDrawerOpen: false});
-// };
 // 	render(){
-// 		let sideDrawer; 
-// 		let backdrop;
-
-// 		if (this.state.sideDrawerOpen){
-// 			sideDrawer = <SideDrawer click={this.sideDrawerOpen}/>;
-// 			backdrop = <Backdrop click={this.backdropClickHandler} />;
-// 		}
-
