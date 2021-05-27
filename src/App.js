@@ -20,7 +20,7 @@ function App() {
 	// const devUserId = "60ae7f5a134d1a3ed0d5a818"; // set to a value valid for your dev environment
 
 	const url = "http://localhost:4500";
-	const devUserId = "60ae91414d47758f4f146474";   // ben's dev id.  Comment out
+	const devUserId = "60afdd9d09aef0f11875129f";   // ben's dev id.  Comment out
 
 
 	/// OTHER VARIABLES ///
@@ -85,3 +85,25 @@ function App() {
 }
 
 export default App;
+
+// class App extends Component {
+// 	state = {
+// 		sideDrawerOpen: false
+// 	};
+// 	drawerToggleClickHandler = () => {
+// 		this.setState((prevState) => {
+// 			return {sideDrawerOpen: !prevState.sideDrawerOpen};
+// 		} );
+// 	};
+// backdropClickHandler = () => {
+// 	this.setState({sideDrawerOpen: false});
+// };
+// 	render(){
+// 		let sideDrawer; 
+// 		let backdrop;
+
+// 		if (this.state.sideDrawerOpen){
+// 			sideDrawer = <SideDrawer click={this.sideDrawerOpen}/>;
+// 			backdrop = <Backdrop click={this.backdropClickHandler} />;
+// 		}
+
