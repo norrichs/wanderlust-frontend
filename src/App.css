@@ -4,7 +4,9 @@
 	--avatar-diameter: 40vw;
   --card-width: 80vw;
   --card-ratio: calc(4 / 3);
-  --social-diameter: 10vw;
+  --social-diameter: 15vw;
+  --card-border-radius: 40px;
+  --round-button-radius: 10vw;
 
 	/* Colors */
   --color-yellow: #FFBD08;
@@ -14,15 +16,26 @@
 }
 * {
   box-sizing: border-box;
-  border: 1px solid;
+  /* border: 1px solid !important; */
 }
 
-
-img {
-  width: 100px
+/* Global resets */
+a {
+  color: black;
+  text-decoration: none;
 }
-
-
+h1{
+  font-size: 2em;
+  font-weight: 300;
+}
+h2 {
+  font-size: 1.5em;
+  font-weight: 800;
+}
+h3 {
+  font-size: 1em;
+  font-weight: 800;
+}
 
 /* Customer Profile page*/
 
@@ -52,6 +65,7 @@ img {
   max-width: 600px;
   width: var(--avatar-diameter);
   border-radius: calc(var(--avatar-diameter) / 2);
+  margin: 1.5em;
 }
 
 .user-socials{
@@ -59,6 +73,7 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+
 }
 .user-social {
   width: var(--social-diameter);
@@ -67,28 +82,15 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: blue;
+  color: white;
 }
-
-
-
-/* Trip page */
-
-
-/* Popular trips page */
-
-
-/* Home Page */
-
-
-/* Agency Profile Page */
-
-
-/* Booking page */
-
-
-/* Login Page */
-
-
+.user-trips{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: scroll;
+}
 
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,500;0,600;1,200;1,500&display=swap');
