@@ -64,7 +64,7 @@ const CustomerProfile = (
 	return (
 		<main className="customer-profile">
 			<header>
-				<div className="back-button" onClick={handleAddBooking}>{'<-'}</div>
+				<div className="back-button" onClick={handleBackButton}>{'<-'}</div>
 				<h1>My Profile</h1>
 				<div className="gear-button">set</div>
 			</header>

@@ -21,6 +21,8 @@
   /* border: 1px solid !important; */
 }
 
+/* Trip page */
+
 #home-link {
   border: 1px solid blue;
   width: fit-content;
@@ -42,9 +44,7 @@
   object-fit: cover;
 }
 
-img {
-  width: 100px;
-}
+
 /* Global resets */
 a {
   color: black;
@@ -123,9 +123,6 @@ h3 {
 }
 
 
-
-
-/* Trip page */
 
 
 /* Popular trips page */
