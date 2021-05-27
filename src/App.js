@@ -78,3 +78,24 @@ function App() {
 }
 
 export default App;
+
+// class App extends Component {
+// 	state = {
+// 		sideDrawerOpen: false
+// 	};
+// 	drawerToggleClickHandler = () => {
+// 		this.setState((prevState) => {
+// 			return {sideDrawerOpen: !prevState.sideDrawerOpen};
+// 		} );
+// 	};
+// backdropClickHandler = () => {
+// 	this.setState({sideDrawerOpen: false});
+// };
+// 	render(){
+// 		let sideDrawer; 
+// 		let backdrop;
+
+// 		if (this.state.sideDrawerOpen){
+// 			sideDrawer = <SideDrawer click={this.sideDrawerOpen}/>;
+// 			backdrop = <Backdrop click={this.backdropClickHandler} />;
+// 		}
