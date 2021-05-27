@@ -4,8 +4,9 @@ import {Link} from 'react-router-dom'
 
 const TripCard = (props) => {
 	const altImg = "https://source.unsplash.com/QVElk1sgzY4/640x426"
+
 	return (
-		<Link to={`/trips/${props._id}`}>
+		<Link to={`/trips/${props.id}`}>
 			<div className="trip-card">
 				<img src={props.photo ? props.photo : altImg}/>
 				<h2>{props.name}</h2>

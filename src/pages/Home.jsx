@@ -19,7 +19,7 @@ const Home = ({ handleSelectCustomer ,activeCustomerId}, props) => {
 							<TripCard
 								key={index}
 								name={item.location.name}
-								_id={item._id}
+								id={item._id}
 								desc={item.description}
 							/>
 						);

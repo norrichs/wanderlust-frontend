@@ -20,6 +20,21 @@
   /* border: 1px solid !important; */
 }
 
+#trip-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.trip-pic {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+}
+
+img {
+  width: 100px;
+}
 /* Global resets */
 a {
   color: black;
@@ -36,6 +51,7 @@ h2 {
 h3 {
   font-size: 1em;
   font-weight: 800;
+
 }
 
 /* Customer Profile page*/
