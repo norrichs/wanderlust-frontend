@@ -152,7 +152,9 @@ h3 {
 }
 .trip-card img {
   width: calc(var(--card-width) - 30px);
+  height: calc(3 / 4 * (var(--card-width) - 30px));
   border-radius: var(--card-border-radius);
+  object-fit: cover;
 }
 .trip-card img:hover {
   opacity: 0.7;
