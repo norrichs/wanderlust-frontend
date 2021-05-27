@@ -268,7 +268,7 @@ section.home-content{
 
 
 /* /// MIKA */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
     .Header_navigation-items {
         display: none;
     }
@@ -366,4 +366,4 @@ section.home-content{
     .side-drawer {
         display: none;
     }
-} */
+}

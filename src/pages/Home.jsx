@@ -4,7 +4,10 @@ import TripCard from "../components/TripCard";
 import AgencyCard from "../components/AgencyCard";
 import Carousel from "../components/Carousel";
 
-const Home = ({ handleSelectCustomer ,activeCustomerId}, props) => {
+const Home = (
+	{ handleSelectCustomer, activeCustomerId, drawerClickHandler },
+	props
+) => {
 	const [trips, setTrips] = useState([]);
 	const [agency, setAgency] = useState([]);
 	const url = "https://travel-app-dg.herokuapp.com";
@@ -57,7 +60,10 @@ const Home = ({ handleSelectCustomer ,activeCustomerId}, props) => {
 	const loaded = () => {
 		return (
 			<main>
-				<Header activeCustomerId={activeCustomerId}/>
+				<Header
+					drawerClickHandler={drawerClickHandler}
+					activeCustomerId={activeCustomerId}
+				/>
 				<section className="home-content">
 					<Carousel id="trip-carousel">{trips}</Carousel>
 					<Carousel id="agency-carousel">{agency}</Carousel>
