@@ -11,14 +11,15 @@ import Trip from "./pages/Trip";
 function App() {
 	/// STATE VARIABLES ///
 	const [activeCustomer, setActiveCustomer] = useState({});
+	const [activeCustomerTrips, setActiveCustomerTrips] = useState([])
 
 	/// DEV VARIABLES ///
 
-	const url = "https://travel-app-dg.herokuapp.com";
-	const devUserId = "60ae7f5a134d1a3ed0d5a818"; // set to a value valid for your dev environment
+	// const url = "https://travel-app-dg.herokuapp.com";
+	// const devUserId = "60ae7f5a134d1a3ed0d5a818"; // set to a value valid for your dev environment
 
-
-	 
+	const url = "http://localhost:4500";
+	const devUserId = "60ae91414d47758f4f146474";   // ben's dev id.  Comment out
 
 
 	/// OTHER VARIABLES ///
@@ -33,9 +34,21 @@ function App() {
 			.then((res) => res.json())
 			.then((data) => {
 				console.log("got user data:", data.data);
-				setActiveCustomer(data.data);
+				const customer = data.data;
+				setActiveCustomer({
+					firstName: customer.name.first,
+					lastName: customer.name.last,
+					avatar: customer.avatar,
+					_id: customer._id,
+					booked_trips: [
+						...customer.booked_trips
+					],
+					username: customer.username,
+					password: customer.password
+				});
 			});
 	};
+
 
 	useEffect(() => {
 		getActiveCustomer(devUserId); // TODO change this to get active user ID from login
