@@ -56,10 +56,12 @@ const Home = ({ handleSelectCustomer ,activeCustomerId}, props) => {
 
 	const loaded = () => {
 		return (
-			<div>
+			<main>
 				<Header activeCustomerId={activeCustomerId}/>
-				<Carousel id="trip-carousel">{trips}</Carousel>
-				<Carousel id="agency-carousel">{agency}</Carousel>
+				<section className="home-content">
+					<Carousel id="trip-carousel">{trips}</Carousel>
+					<Carousel id="agency-carousel">{agency}</Carousel>
+				</section>
 				<button
 					onClick={() => {
 						handleSelectCustomer(activeCustomerId);
@@ -67,7 +69,7 @@ const Home = ({ handleSelectCustomer ,activeCustomerId}, props) => {
 				>
 					Test Login
 				</button>
-			</div>
+			</main>
 		);
 	};
 

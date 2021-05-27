@@ -7,6 +7,7 @@
   --social-diameter: 15vw;
   --card-border-radius: 40px;
   --round-button-radius: 10vw;
+  --header-height-mobile: 25vh;
 
 	/* Colors */
   --color-yellow: #FFBD08;
@@ -102,7 +103,9 @@ h3 {
 
 
 /* Home Page */
-
+section.home-content{
+  margin-top: var(--header-height-mobile)
+}
 
 /* Agency Profile Page */
 
@@ -211,11 +214,14 @@ h3 {
 
 .Header {
     position: fixed;
-    top: 10px;
-    left: 0;
+    top: 0px;
+    left: 0px;
+    right: 0px;
     width: 100%;
     background: orange;
-    height: 40%;
+    height: var(--header-height-mobile);
+    max-height: 400px;
+    z-index: 2;
 
 }
 
