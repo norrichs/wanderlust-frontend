@@ -93,6 +93,118 @@ h3 {
 }
 
 
+
+
+/* Trip page */
+
+
+/* Popular trips page */
+
+
+/* Home Page */
+
+
+/* Agency Profile Page */
+
+
+/* Booking page */
+
+
+/* Login Page */
+
+
+
+
+/* Card Components */
+.trip-card, .agency-card {
+	border-radius: var(--card-border-radius);
+	min-width: 25vh;
+	height: 25vh;
+	scroll-snap-align: start;
+}
+
+
+.trip-card {
+  width: var(--card-width);
+  height: calc( 0.9 * var(--card-width));
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+.trip-card:after {
+  content: "";
+  position: absolute;
+  border-radius: var(--card-border-radius);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -2;
+  box-shadow: 30px 30px 50px 20px lightgray;
+  
+}
+
+
+.card-image-wrapper{
+  position: relative;
+}
+.trip-card img {
+  width: calc(var(--card-width) - 30px);
+  border-radius: var(--card-border-radius);
+}
+.trip-card img:hover {
+  opacity: 0.7;
+}
+
+
+/* Carousel Component */
+
+.carousel{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	gap: 10px;
+	flex-shrink: 0;
+	overflow-x: scroll;
+	scroll-snap-type: y mandatory;
+}
+.carousel-title{
+	justify-content: start;
+}
+
+
+
+/* Buttons */
+.book-button, .back-button, .gear-button{
+  width: var(--round-button-radius);
+  height: var(--round-button-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+}
+.back-button{
+  background-color: var(--color-lightblue);
+  opacity: .5;
+}
+.gear-button{
+  background-color: var(--color-coral);
+  opacity: .5;
+}
+
+.book-button {
+  background-color: var(--color-coral);
+  color: white;
+  font-weight: 900;
+  position:absolute;
+  bottom: calc(0px - var(--round-button-radius)/2);
+  right: var(--round-button-radius)
+
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,500;0,600;1,200;1,500&display=swap');
 
 .Header {
