@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 
 const Login = () => {
-const [fordata, setFormData]= useState({username:'',password:'',})
+const [formData, setFormData]= useState({username:'',password:'',})
 
 
 const handleChange = (e)=>{
