@@ -20,7 +20,17 @@
   /* border: 1px solid !important; */
 }
 
+#trip-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
+.trip-pic {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+}
 
 img {
   width: 100px;
