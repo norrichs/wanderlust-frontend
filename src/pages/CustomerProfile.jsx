@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import UserTripCard from "../components/UserTripCard";
+import TripCard from "../components/UserTripCard";
 // import { Link } from "react-router-dom";
 const CustomerProfile = (
 	{ url, handleAddBooking },
@@ -38,7 +38,7 @@ const CustomerProfile = (
 
 	const tripDisplay = bookedTrips.map((trip, i) => {
 		return (
-			<UserTripCard
+			<TripCard
 				key={i}
 				_id={trip._id}
 				name={trip.name}

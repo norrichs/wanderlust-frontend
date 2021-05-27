@@ -1,18 +1,32 @@
 import React from "react";
-import {Link} from 'react-router-dom'
-// import "../dev/dummyStyle.css";
+import { Link } from "react-router-dom";
 
-const TripCard = (props) => {
-	const altImg = "https://source.unsplash.com/QVElk1sgzY4/640x426"
 
+const UserTripCard = (props) => {
+	const altImg = "https://source.unsplash.com/QVElk1sgzY4/640x426";
 	return (
-		<Link to={`/trips/${props.id}`}>
-			<div className="trip-card">
-				<img src={props.photo ? props.photo : altImg}/>
-				<h2>{props.name}</h2>
-				<p>{props.desc}</p>
+		<div className="trip-card">
+			<div className="card-image-wrapper">
+				<Link to={`/trips/${props._id}`}>
+					<img src={props.photo ? props.photo : altImg} />
+				</Link>
+
+				<div
+					onClick={() => {
+						props.handleAddBooking(props._id);
+					}}
+					className="book-button"
+				>
+					B
+				</div>
 			</div>
-		</Link>
+
+			<h2>{props.name}</h2>
+			<div>
+				<span>{props.locationName}</span>
+
+			</div>
+		</div>
 	);
 };
-export default TripCard;
+export default UserTripCard;
