@@ -1,39 +1,80 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Carousel from "../components/Carousel";
-import dummyDataTrips from "../dev/dummyDataTrips";
-const CustomerProfile = (props) => {
+import React, { useState, useEffect } from "react";
+import { useParams, useHistory } from "react-router-dom";
+import UserTripCard from "../components/UserTripCard";
+// import { Link } from "react-router-dom";
+const CustomerProfile = (
+	{ url, handleAddBooking },
+	props
+) => {
 	console.log("user profile props:", props);
-	const user = props.activeCustomer;
-	console.log(user);
-	console.log(user.firstName);
-
+	const { _id } = useParams();
+	console.log("thisId", _id);
+	const [user, setUser] = useState({});
+	const [bookedTrips, setBookedTrips] = useState([]);
+	const history = useHistory()
 
 	/// Get the trips ///
 	// SHOW with _id
+	const getActiveCustomer = (_id) => {
+		if (_id) {
+			fetch(url + "/customer/" + _id)
+				.then((res) => res.json())
+				.then((data) => {
+					console.log("got user data:", data.data);
+					const customer = data.data;
+					setUser({
+						...customer,
+						firstName: customer.name.first,
+						lastName: customer.name.last,
+					});
+					setBookedTrips([...customer.booked_trips_ref]);
+				});
+		}
+	};
+	const getTrips = (customerId) => {
+		fetch(url + "/customer/" + customerId);
+	};
+
+	const tripDisplay = bookedTrips.map((trip, i) => {
+		return (
+			<UserTripCard
+				key={i}
+				_id={trip._id}
+				name={trip.name}
+				locationName={trip.location.name}
+				handleAddBooking={handleAddBooking}
+			/>
+		);
+	});
+
+///Handle functions///
+	const handleBackButton = () => {
+		history.goBack()
+	}
 
 
+
+	useEffect(() => {
+		
+		getActiveCustomer(_id);
+	}, []);
 
 	return (
 		<main className="customer-profile">
 			<header>
-				<button>back</button>
+				<div className="back-button" onClick={handleAddBooking}>{'<-'}</div>
 				<h1>My Profile</h1>
-				<button>set</button>
+				<div className="gear-button">set</div>
 			</header>
 			<section className="user-info">
-				<img className="user-avi" src={user.avatar} />
+				<img className="user-avi" src={user.avatar ? user.avatar : "https://norrichs.com/img/ben_brownshirt800.jpg"} />
 				<h2>{user.firstName + " " + user.lastName}</h2>
 				<div className="user-socials">
-					<a href="#">
-						<div className="user-social">f</div>
-					</a>
-					<a href="#">
-						<div className="user-social">i</div>
-					</a>
-					<a href="#">
-						<div className="user-social">L</div>
-					</a>
+					<div className="user-social">f</div>
+
+					<div className="user-social">i</div>
+
+					<div className="user-social">L</div>
 				</div>
 
 				<header className="user-tabs active">
@@ -47,9 +88,9 @@ const CustomerProfile = (props) => {
 						About<div className="tab"></div>
 					</div>
 				</header>
-				<section></section>
+				<section className="user-trips"></section>
 			</section>
-			<section className="user-trips"></section>
+			<section className="user-trips">{tripDisplay}</section>
 			{/* <section>{tripList.length > 0 ? loadedTrips() : loading()}</section> */}
 		</main>
 	);
