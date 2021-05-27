@@ -3,7 +3,7 @@ import DrawerToggleButton from "../components/buttons/DrawerToggleButton";
 import { Link } from "react-router-dom";
 // import "../components/styles/Style.css";
 
-const Header = (props) => (
+const Header = ({activeCustomerId},props) => (
 	<header className="Header">
 		<nav className="Header__navigation">
 			<div className="Header__toggle-button">
@@ -29,13 +29,13 @@ const Header = (props) => (
 					</li>
 
 					<li>
-						<Link to="/users/">Customer Profile</Link>
+						<Link to={`/users/${activeCustomerId}`}>Customer Profile</Link>
 					</li>
 					<li>
-						<Link>Popular Trips</Link>
+						<Link to={`/trips`}>Popular Trips</Link>
 					</li>
 					<li>
-						<Link>Login</Link>
+						<Link to={`/login`}>Login</Link>
 					</li>
 				</ul>
 			</div>
