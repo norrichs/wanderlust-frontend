@@ -15,11 +15,11 @@ function App() {
 	let history = useHistory();
 	/// DEV VARIABLES ///
 
-	const url = "https://travel-app-dg.herokuapp.com";
+	// const url = "https://travel-app-dg.herokuapp.com";
 	// const devUserId = "60ae7f5a134d1a3ed0d5a818"; // set to a value valid for your dev environment
 
-	// const url = "http://localhost:4500";
-	const devUserId = "60ae77b0edd7b0001516475e"; // ben's dev id.  Comment out in other dev environment
+	const url = "http://localhost:4500";
+	const devUserId = "60afdd9d09aef0f1187512f0"; // ben's dev id.  Comment out in other dev environment
 
 	/// OTHER VARIABLES ///
 	// deployed url: "https://www.notion.so/Backend-8da8f6e67fef4c3ab9cd86d1327f903e"
