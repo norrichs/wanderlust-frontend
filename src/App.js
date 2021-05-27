@@ -63,12 +63,12 @@ function App() {
 						handleAddBooking={handleAddBooking}
 					/>
 				</Route>
-				<Route path="/trips">
+				{/* <Route path="/trips">
 					<PopularTrips activeCustomerId={activeCustomerId} />
-				</Route>
-				<Route path="/trips/:_id">
-					<Trip activeCustomerId={activeCustomerId} />
-				</Route>
+				</Route> */}
+				<Route path='/trips/:id'
+					render={(routerProps)=> <Trip {...routerProps}/>}
+				/>
 				<Route path="/booking">
 					<Booking
 						bookingToAdd={bookingToAdd}

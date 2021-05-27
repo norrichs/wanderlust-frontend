@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const UserTripCard = (props) => {
 	const altImg = "https://source.unsplash.com/QVElk1sgzY4/640x426";
 	return (
@@ -23,6 +24,7 @@ const UserTripCard = (props) => {
 			<h2>{props.name}</h2>
 			<div>
 				<span>{props.locationName}</span>
+
 			</div>
 		</div>
 	);
