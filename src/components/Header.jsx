@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import DrawerToggleButton from "../components/buttons/DrawerToggleButton"
-import "../components/styles/Style.css";
+// import "../components/styles/Style.css";
 
 const Header = props => (
 
