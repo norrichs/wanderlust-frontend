@@ -4,6 +4,7 @@
 	min-width: 25vh;
 	height: 25vh;
 	scroll-snap-align: start;
+	text-align: center;
 }
 .carousel{
 	display: flex;
