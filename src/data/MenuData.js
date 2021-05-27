@@ -4,7 +4,7 @@ export const menuData = [
     {title: "Agency Profile", link: "/agency profile"},
 	{title: "Booking", link: "/booking"}, 
 	{title: "Customer Profile", link: "/customer profile"},
-	{title: "Login", link: "/customer profile"}
+	{title: "Login", link: "/login"}
 	
 ]
 
