@@ -1,80 +1,39 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
-import UserTripCard from "../components/UserTripCard";
-// import { Link } from "react-router-dom";
-const CustomerProfile = (
-	{ url, handleAddBooking },
-	props
-) => {
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Carousel from "../components/Carousel";
+import dummyDataTrips from "../dev/dummyDataTrips";
+const CustomerProfile = (props) => {
 	console.log("user profile props:", props);
-	const { _id } = useParams();
-	console.log("thisId", _id);
-	const [user, setUser] = useState({});
-	const [bookedTrips, setBookedTrips] = useState([]);
-	const history = useHistory()
+	const user = props.activeCustomer;
+	console.log(user);
+	console.log(user.firstName);
+
 
 	/// Get the trips ///
 	// SHOW with _id
-	const getActiveCustomer = (_id) => {
-		if (_id) {
-			fetch(url + "/customer/" + _id)
-				.then((res) => res.json())
-				.then((data) => {
-					console.log("got user data:", data.data);
-					const customer = data.data;
-					setUser({
-						...customer,
-						firstName: customer.name.first,
-						lastName: customer.name.last,
-					});
-					setBookedTrips([...customer.booked_trips_ref]);
-				});
-		}
-	};
-	const getTrips = (customerId) => {
-		fetch(url + "/customer/" + customerId);
-	};
-
-	const tripDisplay = bookedTrips.map((trip, i) => {
-		return (
-			<UserTripCard
-				key={i}
-				_id={trip._id}
-				name={trip.name}
-				locationName={trip.location.name}
-				handleAddBooking={handleAddBooking}
-			/>
-		);
-	});
-
-///Handle functions///
-	const handleBackButton = () => {
-		history.goBack()
-	}
 
 
-
-	useEffect(() => {
-		
-		getActiveCustomer(_id);
-	}, []);
 
 	return (
 		<main className="customer-profile">
 			<header>
-				<div className="back-button" onClick={handleAddBooking}>{'<-'}</div>
+				<button>back</button>
 				<h1>My Profile</h1>
-				<div className="gear-button">set</div>
+				<button>set</button>
 			</header>
 			<section className="user-info">
-				<img className="user-avi" src={user.avatar ? user.avatar : "https://norrichs.com/img/ben_brownshirt800.jpg"} />
+				<img className="user-avi" src={user.avatar} />
 				<h2>{user.firstName + " " + user.lastName}</h2>
 				<div className="user-socials">
-					<div className="user-social">f</div>
-
-					<div className="user-social">i</div>
-
-					<div className="user-social">L</div>
+					<a href="#">
+						<div className="user-social">f</div>
+					</a>
+					<a href="#">
+						<div className="user-social">i</div>
+					</a>
+					<a href="#">
+						<div className="user-social">L</div>
+					</a>
 				</div>
 
 				<header className="user-tabs active">
@@ -88,9 +47,9 @@ const CustomerProfile = (
 						About<div className="tab"></div>
 					</div>
 				</header>
-				<section className="user-trips"></section>
+				<section></section>
 			</section>
-			<section className="user-trips">{tripDisplay}</section>
+			<section className="user-trips"></section>
 			{/* <section>{tripList.length > 0 ? loadedTrips() : loading()}</section> */}
 		</main>
 	);

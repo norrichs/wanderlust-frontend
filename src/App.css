@@ -4,9 +4,7 @@
 	--avatar-diameter: 40vw;
   --card-width: 80vw;
   --card-ratio: calc(4 / 3);
-  --social-diameter: 15vw;
-  --card-border-radius: 40px;
-  --round-button-radius: 10vw;
+  --social-diameter: 10vw;
 
 	/* Colors */
   --color-yellow: #FFBD08;
@@ -16,26 +14,15 @@
 }
 * {
   box-sizing: border-box;
-  /* border: 1px solid !important; */
+  border: 1px solid;
 }
 
-/* Global resets */
-a {
-  color: black;
-  text-decoration: none;
+
+img {
+  width: 100px
 }
-h1{
-  font-size: 2em;
-  font-weight: 300;
-}
-h2 {
-  font-size: 1.5em;
-  font-weight: 800;
-}
-h3 {
-  font-size: 1em;
-  font-weight: 800;
-}
+
+
 
 /* Customer Profile page*/
 
@@ -65,7 +52,6 @@ h3 {
   max-width: 600px;
   width: var(--avatar-diameter);
   border-radius: calc(var(--avatar-diameter) / 2);
-  margin: 1.5em;
 }
 
 .user-socials{
@@ -73,7 +59,6 @@ h3 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-
 }
 .user-social {
   width: var(--social-diameter);
@@ -82,16 +67,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: blue;
-  color: white;
 }
-.user-trips{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  overflow-y: scroll;
-}
-
 
 
 
@@ -114,94 +90,3 @@ h3 {
 
 
 
-
-/* Card Components */
-.trip-card, .agency-card {
-	border-radius: var(--card-border-radius);
-	min-width: 25vh;
-	height: 25vh;
-	scroll-snap-align: start;
-}
-
-
-.trip-card {
-  width: var(--card-width);
-  height: calc( 0.9 * var(--card-width));
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-}
-.trip-card:after {
-  content: "";
-  position: absolute;
-  border-radius: var(--card-border-radius);
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  box-shadow: 30px 30px 50px 20px lightgray;
-  
-}
-
-
-.card-image-wrapper{
-  position: relative;
-}
-.trip-card img {
-  width: calc(var(--card-width) - 30px);
-  border-radius: var(--card-border-radius);
-}
-.trip-card img:hover {
-  opacity: 0.7;
-}
-
-
-/* Carousel Component */
-
-.carousel{
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	gap: 20px;
-	flex-shrink: 0;
-	overflow-x: scroll;
-	scroll-snap-type: x mandatory;
-  padding: 10px 0px;
-}
-.carousel-title{
-	justify-content: start;
-}
-
-
-
-/* Buttons */
-.book-button, .back-button, .gear-button{
-  width: var(--round-button-radius);
-  height: var(--round-button-radius);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-
-}
-.back-button{
-  background-color: var(--color-lightblue);
-  opacity: .5;
-}
-.gear-button{
-  background-color: var(--color-coral);
-  opacity: .5;
-}
-
-.book-button {
-  background-color: var(--color-coral);
-  color: white;
-  font-weight: 900;
-  position:absolute;
-  bottom: calc(0px - var(--round-button-radius)/2);
-  right: var(--round-button-radius)
-
-}
