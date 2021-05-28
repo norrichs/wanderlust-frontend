@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+// import styles from "../components/"
 import Trips from '../components/Trips';
+
 // import CartItems from '../components/CartItems';
 
 
