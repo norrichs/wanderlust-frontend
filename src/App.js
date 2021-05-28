@@ -47,7 +47,7 @@ function App() {
 	return (
 		<div className="App">
 			<Switch>
-				<Route exact path="/">
+				<Route exact path="/home">
 					<Home
 						handleSelectCustomer={handleSelectCustomer}
 						activeCustomerId={activeCustomerId}
@@ -76,9 +76,9 @@ function App() {
 						activeCustomerId={activeCustomerId}
 					/>
 				</Route>
-				<Route path="/login">
-					<Login />
-				</Route>
+				<Route path="/login"></Route>
+				<Route path="/login"><Login /></Route>
+				<Route path="/login"><Login /></Route>
 			</Switch>
 		</div>
 	);
@@ -86,8 +86,3 @@ function App() {
 
 export default App;
 
-// class App extends Component {
-// 	state = {
-// 		sideDrawerOpen: false
-// 	};
-// 	render(){
