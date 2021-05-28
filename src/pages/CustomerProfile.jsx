@@ -32,9 +32,7 @@ const CustomerProfile = (
 				});
 		}
 	};
-	const getTrips = (customerId) => {
-		fetch(url + "/customer/" + customerId);
-	};
+
 
 	const tripDisplay = bookedTrips.map((trip, i) => {
 		return (
@@ -69,7 +67,7 @@ const CustomerProfile = (
 				<div className="gear-button">set</div>
 			</header>
 			<section className="user-info">
-				<img className="user-avi" src={user.avatar ? user.avatar : "https://norrichs.com/img/ben_brownshirt800.jpg"} />
+				<img className="user-avi" alt={user.username} src={user.avatar ? user.avatar : "https://norrichs.com/img/ben_brownshirt800.jpg"} />
 				<h2>{user.firstName + " " + user.lastName}</h2>
 				<div className="user-socials">
 					<div className="user-social">f</div>

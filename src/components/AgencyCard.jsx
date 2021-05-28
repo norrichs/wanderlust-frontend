@@ -8,7 +8,7 @@ const UserTripCard = (props) => {
 			<section>
 				<div>
 					<Link to={`/agency/${props._id}`}>
-						<img src={props.logo ? props.logo : altImg} />
+						<img alt={props.name} src={props.logo ? props.logo : altImg} />
 					</Link>
 				</div>
 
