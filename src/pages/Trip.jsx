@@ -23,7 +23,8 @@ const Trip = (props) => {
 		return (
 			<div>
 				<Link to="/">
-					<h1 id="home-link">Back to Home</h1>
+					<h1 id="home-linkls
+					">Back to Home</h1>
 				</Link>
 			<h1>{trip.location.name}</h1>
 			<section id="trip-gallery">
