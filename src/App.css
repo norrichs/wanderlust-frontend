@@ -69,7 +69,7 @@ h3 {
 
 /* Customer Profile page*/
 
-.customer-profile {
+.customer-profile,.agency-profile {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -78,13 +78,13 @@ h3 {
 	width: 100vw;
 	max-width: 800px;
 }
-.customer-profile header {
+.customer-profile,.agency-profile header {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
-.customer-profile section {
+.customer-profile,.agency-profile section {
 	width: 90%;
 	display: flex;
 	flex-direction: column;
