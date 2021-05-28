@@ -68,7 +68,7 @@ export default function Products({ setCartItems, cartItems }) {
   };
 
   return (
-    <>
+    <main>
       <h1>Trips</h1>
       Select a category
       <select onChange={(e) => setCategory(e.target.value)}>
@@ -89,7 +89,7 @@ export default function Products({ setCartItems, cartItems }) {
           </div>
         ))}
       </div>
-    </>
+    </main>
   );
 }
 
