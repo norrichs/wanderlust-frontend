@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const UserTripCard = (props) => {
 	const altImg = "https://source.unsplash.com/QVElk1sgzY4/640x426";
 	return (
-		<div className="trip-card">
+		<div className="agency-card">
 			<div className="card-image-wrapper">
 				<Link to={`/trips/${props._id}`}>
-					<img src={props.photo ? props.photo : altImg} />
+					<img src={props.logo ? props.logo : altImg} />
 				</Link>
 
 				<div onClick={()=>{props.handleAddBooking(props._id)}} className="book-button">B</div>

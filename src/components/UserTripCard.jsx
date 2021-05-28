@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import "../dev/dummyStyle.css";
 
 const UserTripCard = (props) => {
 	const altImg = "https://source.unsplash.com/QVElk1sgzY4/640x426";

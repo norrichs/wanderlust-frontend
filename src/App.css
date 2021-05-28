@@ -14,10 +14,22 @@
   --color-coral: #FF5A5A;
   --color-blue: #0e9cd3;
   --color-lightblue: #3CB7C2;
+  --color-lightgray: #6f7679;
 }
 * {
   box-sizing: border-box;
   /* border: 1px solid !important; */
+}
+
+/* Trip page */
+
+#home-link {
+  border: 1px solid blue;
+  width: fit-content;
+  padding: 5px;
+  margin-left: 8px;
+  border-radius: 10px;
+  background-color: lightblue;
 }
 
 #trip-gallery {
@@ -32,13 +44,14 @@
   object-fit: cover;
 }
 
-img {
-  width: 100px;
-}
+
 /* Global resets */
 a {
   color: black;
   text-decoration: none;
+}
+.light-link a{
+  color: var(--color-lightgray)
 }
 h1{
   font-size: 2em;
@@ -112,9 +125,6 @@ h3 {
 
 
 
-/* Trip page */
-
-
 /* Popular trips page */
 
 
@@ -136,23 +146,23 @@ section.home-content{
 
 /* Card Components */
 .trip-card, .agency-card {
-	border-radius: var(--card-border-radius);
-	min-width: 25vh;
-	height: 25vh;
-	scroll-snap-align: start;
+  scroll-snap-align: start;
 }
 
 
-.trip-card {
+.trip-card,.agency-card{
+  border-radius: var(--card-border-radius);
   width: var(--card-width);
   height: calc( 0.9 * var(--card-width));
   padding: 15px;
   display: flex;
+  flex-shrink: 0;
   flex-direction: column;
   align-items: flex-start;
   position: relative;
+  background-color: white;
 }
-.trip-card:after {
+.trip-card:after,.agency-card:after {
   content: "";
   position: absolute;
   border-radius: var(--card-border-radius);
@@ -161,8 +171,7 @@ section.home-content{
   left: 0;
   right: 0;
   z-index: -2;
-  box-shadow: 30px 30px 50px 20px lightgray;
-  
+  box-shadow: 30px 18px 30px 5px lightgray;
 }
 
 
@@ -170,8 +179,9 @@ section.home-content{
   position: relative;
 }
 .trip-card img {
-  width: calc(var(--card-width) - 30px);
-  height: calc(3 / 4 * (var(--card-width) - 30px));
+  width: 100%;
+  /* width: calc(var(--card-width) - 30px); */
+  height: calc(.7 * (var(--card-width) - 30px));
   border-radius: var(--card-border-radius);
   object-fit: cover;
 }
@@ -179,20 +189,34 @@ section.home-content{
   opacity: 0.7;
 }
 
+.agency-card img {
+  
+  border-radius: 50%;
+  width: 100px
+}
 
 /* Carousel Component */
 
 .carousel{
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: flex-start;
 	gap: 10px;
 	flex-shrink: 0;
 	overflow-x: scroll;
-	scroll-snap-type: y mandatory;
+	scroll-snap-type: x mandatory;
+  padding: 20px 0 40px 0;
+  scroll-padding-left: 20px;
 }
-.carousel-title{
-	justify-content: start;
+.home-content .heading{
+  display: flex;
+	justify-content: space-between;
+  align-items: flex-end;
+}
+.heading h2,span{
+  margin: 5px;
+
+
 }
 
 
@@ -284,7 +308,7 @@ section.home-content{
 
 
 /* /// MIKA */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
     .Header_navigation-items {
         display: none;
     }
@@ -382,4 +406,4 @@ section.home-content{
     .side-drawer {
         display: none;
     }
-} */
+}
