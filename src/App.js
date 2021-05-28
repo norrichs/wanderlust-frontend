@@ -5,7 +5,7 @@ import AgencyProfile from "./pages/AgencyProfile";
 import Booking from "./pages/Booking";
 import CustomerProfile from "./pages/CustomerProfile";
 import Home from "./pages/Home";
-import PopularTrips from "./pages/PopularTrips";
+// import PopularTrips from "./pages/PopularTrips";
 import Trip from "./pages/Trip";
 import Login from "./pages/Login";
 
