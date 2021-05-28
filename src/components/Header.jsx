@@ -18,10 +18,10 @@ const Header = ({ activeCustomerId }, props) => {
 		console.log("drawerClickHandler", sideDrawerOpen);
 		setSideDrawerOpen(sideDrawerOpen ? false : true);
 	};
-	const backdropClickHandler = () => {
-		console.log("backDropClickHandler", sideDrawerOpen)
-		setSideDrawerOpen(false)
-	}
+	// const backdropClickHandler = () => {
+	// 	console.log("backDropClickHandler", sideDrawerOpen)
+	// 	setSideDrawerOpen(false)
+	// }
 
 	return (
 		<header className="Header">
@@ -34,6 +34,7 @@ const Header = ({ activeCustomerId }, props) => {
 				</div>
 				<div className="Header__logo">
 					<img
+						alt="company logo"
 						src="https://bn1304files.storage.live.com/y4mpKzW6-2QNM2uI6ld0jlkdSsFgdtuiJZt9VayonGVsHIfgjQdE16f9-unyuwJ5nDVX5b1lqEI7X8zkdSoBDNcOCl8XolsCzKaHXGp1YLBqdTDlkaY5M7CX4pVbGuVUUSQiX8gcv6PBi3_hEMqw1tSYuELEAIour4eVbCYmG_wJMjziw9UF0gm4bzg88TOJnfU?width=250&height=250&cropmode=none"
 						width="250"
 						height="250"

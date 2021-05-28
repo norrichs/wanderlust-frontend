@@ -8,7 +8,7 @@ const TripCard = (props) => {
 		<div className="trip-card">
 			<div className="card-image-wrapper">
 				<Link to={`/trips/${props._id}`}>
-					<img src={props.photo ? props.photo : altImg} />
+					<img alt={props.name} src={props.photo ? props.photo : altImg} />
 				</Link>
 
 				<div
