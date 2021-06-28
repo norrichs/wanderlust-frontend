@@ -55,7 +55,6 @@ const CustomerProfile = (
 
 
 	useEffect(() => {
-		
 		getActiveCustomer(_id);
 	}, []);
 

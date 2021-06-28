@@ -52,7 +52,7 @@ function App() {
 	return (
 		<GlobalCtx.Provider value={{gState,setGState}}>
 		<div className="App">
-			<Switch>
+		<Switch>
 				<Route exact path="/home">
 					<Home
 						handleSelectCustomer={handleSelectCustomer}
