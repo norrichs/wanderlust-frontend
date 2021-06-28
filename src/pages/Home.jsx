@@ -6,12 +6,13 @@ import AgencyCard from "../components/AgencyCard";
 import Carousel from "../components/Carousel";
 
 const Home = (
-	{ handleSelectCustomer, activeCustomerId, drawerClickHandler },
+	{ url, handleSelectCustomer, activeCustomerId, drawerClickHandler },
 	props
 ) => {
 	const [trips, setTrips] = useState([]);
 	const [agency, setAgency] = useState([]);
-	const url = "https://travel-app-dg.herokuapp.com";
+	// const url = "https://seir329-wanderlust.herokuapp.com/";
+	// const url = "https://travel-app-dg.herokuapp.com";
 
 	const getTrips = () => {
 		fetch(url + "/trip")

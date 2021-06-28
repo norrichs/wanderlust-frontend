@@ -14,7 +14,7 @@ import HeaderLogin from './pages/headerlogin'
 export const GlobalCtx = createContext(null)
 function App() {
 	/// STATE VARIABLES ///
-	const url = "https://travel-app-dg.herokuapp.com";
+	const url = "https://seir329-wanderlust.herokuapp.com"
 	const [activeCustomerId, setActiveCustomerId] = useState(null);
 	const [bookingToAdd, setBookingToAdd] = useState(null);
 	const [gState,setGState] = useState({url:url});
@@ -23,13 +23,9 @@ function App() {
 	/// DEV VARIABLES ///
 
 	
-	// const devUserId = "60ae7f5a134d1a3ed0d5a818"; // set to a value valid for your dev environment
-
-	// const url = "http://localhost:4500";
-	const devUserId = "60afe19cad4ee50015cbce64"; // ben's dev id.  Comment out in other dev environment
+	const devUserId = "60da4b6c790adc00156ff5e5"; // ben's dev id.  Comment out in other dev environment
 
 	/// OTHER VARIABLES ///
-	// deployed url: "https://www.notion.so/Backend-8da8f6e67fef4c3ab9cd86d1327f903e"
 
 	/// HANDLER FUNCTIONS ///
 	const handleSelectCustomer = (_id) => {
@@ -53,10 +49,11 @@ function App() {
 		<GlobalCtx.Provider value={{gState,setGState}}>
 		<div className="App">
 		<Switch>
-				<Route exact path="/home">
+				<Route exact path="/">
 					<Home
 						handleSelectCustomer={handleSelectCustomer}
 						activeCustomerId={activeCustomerId}
+						url={url}
 					/>
 				</Route>
 				<Route path="/agency/:_id">
@@ -82,11 +79,11 @@ function App() {
 						activeCustomerId={activeCustomerId}
 					/>
 				</Route>
-				<Route exact path="/">
+				{/* <Route exact path="/">
 					<HeaderLogin/>
 				</Route>
 				<Route path="/login" render={(rp)=><Login {...rp}/> }/>
-				<Route path="/signup" render={(rp)=><SignUp {...rp}/> }/>
+				<Route path="/signup" render={(rp)=><SignUp {...rp}/> }/> */}
 			</Switch>
 		</div>
 		</GlobalCtx.Provider>
